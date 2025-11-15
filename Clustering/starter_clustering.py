@@ -50,7 +50,7 @@ K = 2 # number of clusters
 # - K=2 clusters, 
 # - Euclidean distance as dissimilarity measure
 # - "complete (maximal)" linkage between clusters 
-hc = cluster.AgglomerativeClustering(n_clusters=K, linkage="complete", affinity="l2")
+hc = cluster.AgglomerativeClustering(n_clusters=K, linkage="complete", metric="l2")
 
 # Fitting and predict the assigned clusters of the samples
 labels_hc = hc.fit_predict(X)
@@ -78,7 +78,7 @@ labels_kmeans = kmeans.predict(X)
 # plot the obteained clusters and the final centers
 plot_clusters(X, labels_kmeans, title ='K-means Clustering', symbolsize=80)
 centers = kmeans.cluster_centers_
-plt.scatter(centers[:,0], centers[:, 1], marker='s', s=100)
+plt.scatter(centers[:,0], centers[:, 1], marker='s', s=100);
 
 
 
